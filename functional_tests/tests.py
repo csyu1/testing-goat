@@ -24,7 +24,7 @@ class NewVisistorTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox(firefox_binary=FirefoxBinary(
-            firefox_path='/home/carl/git/testing_goat/firefox/firefox'
+            firefox_path='../firefox/firefox'
         ))
         self.browser.implicitly_wait(3)
 
@@ -80,7 +80,7 @@ class NewVisistorTest(StaticLiveServerTestCase):
         ## of Edith's is coming through from cookies etc
         self.browser.quit()
         self.browser = webdriver.Firefox(firefox_binary=FirefoxBinary(
-            firefox_path='/home/carl/git/testing_goat/firefox/firefox'
+            firefox_path='../firefox/firefox'
         ))
 
         # Francis visits the home page.  There is no sign of Edith's
