@@ -1,11 +1,10 @@
-from django.test import LiveServerTestCase
-
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from selenium.webdriver.common.keys import Keys
 
 
-class NewVisistorTest(LiveServerTestCase):
+class NewVisistorTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox(firefox_binary=FirefoxBinary(
