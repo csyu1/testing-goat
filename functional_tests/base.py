@@ -27,9 +27,12 @@ class FunctionalTest(StaticLiveServerTestCase):
             super().tearDownClass()
 
     def setUp(self):
+        """
         self.browser = webdriver.Firefox(firefox_binary=FirefoxBinary(
             firefox_path='../firefox/firefox'
         ))
+        """
+        self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):

@@ -51,9 +51,12 @@ class NewVisistorTest(FunctionalTest):
         ## We use a new browser session to make sure that no information
         ## of Edith's is coming through from cookies etc
         self.browser.quit()
+        """
         self.browser = webdriver.Firefox(firefox_binary=FirefoxBinary(
             firefox_path='../firefox/firefox'
         ))
+        """
+        self.browser = webdriver.Firefox()
 
         # Francis visits the home page.  There is no sign of Edith's
         # list
