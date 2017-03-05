@@ -31,9 +31,9 @@ class NewVisistorTest(FunctionalTest):
         # When she hits enter, the page updates, and now the page lists
         # "1: Buy peacock feathers" as an item in a to-do list
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(0.5)
+        time.sleep(5)
         edith_list_url = self.browser.current_url
-        # self.assertRegex(edith_list_url, '/lists/.+')
+        self.assertRegex(edith_list_url, '/lists/.+')
         self.wait_for_row_in_list_table('1: Buy peacock feathers')
 
         # There is still a text box inviting her to add another item. She
@@ -70,7 +70,7 @@ class NewVisistorTest(FunctionalTest):
         inputbox = self.get_item_input_box()
         inputbox.send_keys('buy milk')
         inputbox.send_keys(Keys.ENTER)
-        time.sleep(0.5)
+        time.sleep(5)
 
         # Francis gets his own unique url
         francis_list_url = self.browser.current_url

@@ -21,11 +21,6 @@ class FunctionalTest(StaticLiveServerTestCase):
         super().setUpClass()
         cls.server_url = cls.live_server_url
 
-    @classmethod
-    def tearDownClass(cls):
-        if cls.server_url == cls.live_server_url:
-            super().tearDownClass()
-
     def setUp(self):
         """
         self.browser = webdriver.Firefox(firefox_binary=FirefoxBinary(
@@ -34,6 +29,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         """
         self.browser = webdriver.Firefox()
         self.browser.implicitly_wait(3)
+        super().setUp()
 
     def tearDown(self):
         self.browser.quit()
