@@ -12,6 +12,7 @@ def send_login_email(request):
     url = request.build_absolute_uri(
         reverse('login') + '?token={uid}'.format(uid=str(token.uid))
     )
+    print(url)
     message_body = 'Use this link to log in:\n\n{url}'.format(url=url)
     send_mail(
         'Your login link for Superlists',
